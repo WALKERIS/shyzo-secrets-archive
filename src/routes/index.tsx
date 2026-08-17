@@ -2,7 +2,9 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
+import { Dread } from "@/components/Dread";
 import { unlockSite } from "@/lib/gate.functions";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
