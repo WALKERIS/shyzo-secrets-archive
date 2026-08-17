@@ -34,6 +34,7 @@ const NOTES_KEY = "room.notes";
 
 function Room() {
   const router = useRouter();
+  const access = Route.useLoaderData();
   const lock = useServerFn(lockSite);
   const fileRef = useRef<HTMLInputElement>(null);
   const [pics, setPics] = useState<Pic[]>([]);
@@ -50,6 +51,10 @@ function Room() {
     }
     setReady(true);
   }, []);
+
+  useEffect(() => {
+    if (!access.unlocked) void router.navigate({ to: "/" });
+  }, [access.unlocked, router]);
 
   useEffect(() => {
     if (ready) localStorage.setItem(PICS_KEY, JSON.stringify(pics));
@@ -72,6 +77,8 @@ function Room() {
       reader.readAsDataURL(file);
     });
   }
+
+  if (!access.unlocked) return null;
 
   return (
     <main className="void-screen flicker min-h-screen px-5 py-10 sm:px-10">
