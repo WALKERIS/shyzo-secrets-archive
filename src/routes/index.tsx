@@ -2,7 +2,9 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
+import { Dread } from "@/components/Dread";
 import { unlockSite } from "@/lib/gate.functions";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,11 +41,14 @@ function Gate() {
   }
 
   return (
-    <main className="void-screen flex min-h-screen items-center justify-center px-6">
-      <form onSubmit={onSubmit} className="w-full max-w-sm text-center">
-        <h1 className="glitch text-3xl font-light tracking-[0.3em] uppercase" data-text="who pushed me">
+    <main className="void-screen relative flex min-h-screen items-center justify-center overflow-hidden px-6">
+      <div className="noise" aria-hidden="true" />
+      <Dread />
+      <form onSubmit={onSubmit} className="jitter relative z-40 w-full max-w-sm text-center">
+        <h1 className="glitch flicker text-3xl font-light tracking-[0.3em] uppercase" data-text="who pushed me">
           who pushed me
         </h1>
+
         <input
           autoFocus
           type="password"

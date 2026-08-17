@@ -2,7 +2,9 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 
+import { Dread } from "@/components/Dread";
 import { getRoomAccess, lockSite } from "@/lib/gate.functions";
+
 
 export const Route = createFileRoute("/room")({
   ssr: false,
@@ -81,16 +83,18 @@ function Room() {
   if (!access.unlocked) return null;
 
   return (
-    <main className="void-screen flicker min-h-screen px-5 py-10 sm:px-10">
+    <main className="void-screen flicker relative min-h-screen overflow-hidden px-5 py-10 sm:px-10">
       <div className="noise" aria-hidden="true" />
-      <div className="relative mx-auto max-w-5xl">
+      <Dread />
+      <div className="relative z-40 mx-auto max-w-5xl">
         <header className="flex items-baseline justify-between gap-4">
           <h1
-            className="glitch text-2xl font-light tracking-[0.35em] uppercase"
+            className="glitch jitter text-2xl font-light tracking-[0.35em] uppercase"
             data-text="inside"
           >
             inside
           </h1>
+
           <button
             onClick={async () => {
               await lock({ data: undefined });
