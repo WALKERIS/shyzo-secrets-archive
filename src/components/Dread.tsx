@@ -10,9 +10,9 @@ const DRIPS = [
 ];
 
 const SMEARS = [
-  { top: "12%", left: "4%", size: 180, rot: "12deg", o: 0.14 },
-  { top: "52%", right: "6%", size: 260, rot: "-30deg", o: 0.11 },
-  { top: "78%", left: "22%", size: 140, rot: "48deg", o: 0.09 },
+  { top: "12%", left: "4%", size: 180, rot: "12deg", o: 0.07 },
+  { top: "52%", right: "6%", size: 260, rot: "-30deg", o: 0.06 },
+  { top: "78%", left: "22%", size: 140, rot: "48deg", o: 0.05 },
 ];
 
 const WHISPERS = [

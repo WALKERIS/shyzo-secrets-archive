@@ -299,11 +299,11 @@
   border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
   background: radial-gradient(
     ellipse at 40% 40%,
-    oklch(0.34 0.17 25),
-    oklch(0.18 0.1 25) 70%,
+    oklch(0.22 0.1 25),
+    oklch(0.1 0.05 25) 70%,
     transparent 75%
   );
-  filter: blur(6px);
+  filter: blur(18px);
   animation: blood-breathe 17s ease-in-out infinite;
 }
 
