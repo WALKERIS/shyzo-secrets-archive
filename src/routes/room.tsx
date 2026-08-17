@@ -2,7 +2,9 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 
+import { Dread } from "@/components/Dread";
 import { getRoomAccess, lockSite } from "@/lib/gate.functions";
+
 
 export const Route = createFileRoute("/room")({
   ssr: false,
